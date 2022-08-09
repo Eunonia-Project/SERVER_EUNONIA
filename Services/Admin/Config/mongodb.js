@@ -1,7 +1,8 @@
+require('dotenv').config({path:'../../.env'})
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
 // Conection to MongoDB
-const uri = `mongodb+srv://eunonia:iW5S2ziptqtgnTLl@cluster0.b640hoq.mongodb.net/?retryWrites=true&w=majority`;
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 // Database name

@@ -1,5 +1,5 @@
 const AdminModel = require("../models/AdminModels");
-const { hashPassword } = require("../../helpers/bcrypt");
+const { hashPassword } = require("../../../helpers/bcrypt");
 
 class AdminController {
   static async findAll(req, res, next) {

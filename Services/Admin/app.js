@@ -4,8 +4,7 @@ const app = express();
 const cors = require("cors");
 const { connect } = require("./config/mongodb");
 const routesAdmin = require("./routes/index");
-const errorHandler = require("../Middleware/errorhandle");
-
+const errorHandler = require("../../Middleware/errorhandle");
 
 app.use(cors());
 app.use(express.json());
@@ -23,5 +22,5 @@ connect()
   })
   .catch((err) => {
     console.log(err);
-    throw new err;
+    // throw new err;
   });
