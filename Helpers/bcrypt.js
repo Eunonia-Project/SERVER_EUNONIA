@@ -1,9 +1,8 @@
+require('dotenv').config({path:'../.env'})
 const bcrypt = require('bcrypt');
-const { env } = require('process');
-const saltRounds = +env.SALT_ROUNDS;
 
 const hashPassword = (password) => {
-    const result = bcrypt.hashSync(password, saltRounds);
+    const result = bcrypt.hashSync(password, +process.env.SALT_ROUNDS); 
     return result;
 }
 const comparePassword = (password, hash) => {
