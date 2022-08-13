@@ -7,9 +7,9 @@ const errorHandler = (err, req, res, next) => {
       code = 400;
       message = "Email is required";
       break;
-    case "BadRequestPassword":
+    case "BadRequestEmail":
       code = 400;
-      message = "Password is required";
+      message = "Email is required";
       break;
     default:
       break;

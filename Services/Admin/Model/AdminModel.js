@@ -11,6 +11,17 @@ class AdminModel {
       throw new error();
     }
   }
+  static async findOneByEmail(email) {
+    try {
+      const admin = await getDatabase()
+        .collection("admin")
+        .findOne({ email });
+      return admin;
+    } catch (error) {
+      // console.log(error);
+      throw new error();
+    }
+  }
   static async findOne(id) {
     try {
       const admin = await getDatabase()

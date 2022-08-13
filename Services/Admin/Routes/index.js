@@ -1,9 +1,13 @@
 const router = require('express').Router();
-const AdminController = require('../controllers/AdminController');
+const AdminController = require('../controller/AdminController');
+const authentication = require('../middleware/auth');
 
-router.get('/', AdminController.findAll);
+router.post('/login', AdminController.loginAdmin);
 router.get('/:id', AdminController.findOne);
-router.post('/', AdminController.createAdmin);
+router.post('/create', AdminController.createAdmin);
+router.use(authentication);
+router.get('/', AdminController.findAll);
+//MIDLERWARE
 router.delete('/:id', AdminController.deleteAdmin);
 
 module.exports = router;
