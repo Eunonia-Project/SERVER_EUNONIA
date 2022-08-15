@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const { connect } = require("./config/mongodb");
 const routesAdmin = require("./routes/index");
-const errorHandler = require("./Middleware/errorhandle");
+const errorHandler = require("./Middleware/errorHandler");
 
 app.use(cors());
 app.use(express.json());
